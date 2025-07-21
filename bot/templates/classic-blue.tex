@@ -1,0 +1,44 @@
+\documentclass{resume}
+\usepackage[hidelinks]{hyperref}
+\name{{{{ name }}}}
+\contact{\href{{tel:{{ phone }}}}{{{{ phone }}}}}
+\contact{\href{{mailto:{{ email }}}}{{{{ email }}}}}
+\contact{\href{{https://github.com/{{ github }}}}{{github.com/{{ github }}}}}
+\contact{\href{{https://linkedin.com/in/{{ linkedin }}}}{{linkedin.com/in/{{ linkedin }}}}}
+
+\begin{document}
+\makeheader
+
+\begin{ResumeSection}{skills}
+    \begin{ResumeSubsection}{org=Technical}
+        \begin{itemize}
+            {% for skill in skills %}
+            \item {{ skill }}
+            {% endfor %}
+        \end{itemize}
+    \end{ResumeSubsection}
+\end{ResumeSection}
+
+\begin{ResumeSection}{experience}
+    {% for exp in experience %}
+    \begin{ResumeSubsection}{org={{ exp.org }},location={{ exp.location }},position={{ exp.position }},duration={{ exp.duration }}}
+        \begin{itemize}
+            {% for line in exp.description %}
+            \item {{ line }}
+            {% endfor %}
+        \end{itemize}
+    \end{ResumeSubsection}
+    {% endfor %}
+\end{ResumeSection}
+
+\begin{ResumeSection}{education}
+    {% for edu in education %}
+    \begin{ResumeSubsection}{org={{ edu.org }},position={{ edu.degree }},duration={{ edu.duration }}}
+        \begin{itemize}
+            \item {{ edu.note }}
+        \end{itemize}
+    \end{ResumeSubsection}
+    {% endfor %}
+\end{ResumeSection}
+
+\end{document}
