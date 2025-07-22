@@ -1,3 +1,6 @@
-python-telegram-bot
-jinja2
+aiogram
+python-dotenv
+psycopg2-binary
+boto3
 pdf2image
+Pillow

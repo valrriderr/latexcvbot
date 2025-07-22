@@ -1,44 +1,53 @@
 \documentclass{resume}
 \usepackage[hidelinks]{hyperref}
-\name{{{{ name }}}}
-\contact{\href{{tel:{{ phone }}}}{{{{ phone }}}}}
-\contact{\href{{mailto:{{ email }}}}{{{{ email }}}}}
-\contact{\href{{https://github.com/{{ github }}}}{{github.com/{{ github }}}}}
-\contact{\href{{https://linkedin.com/in/{{ linkedin }}}}{{linkedin.com/in/{{ linkedin }}}}}
+
+\name{ {{ name }} }
+\contact{ \href{tel:{{ phone }}}{{ phone }} }
+\contact{ \href{mailto:{{ email }}}{{ email }} }
+\contact{ \href{https://github.com/{{ github }}}{github.com/{{ github }}} }
+\contact{ \href{https://linkedin.com/in/{{ linkedin }}}{linkedin.com/in/{{ linkedin }}} }
 
 \begin{document}
 \makeheader
 
+{% if skills %}
 \begin{ResumeSection}{skills}
-    \begin{ResumeSubsection}{org=Technical}
+    {% for group in skills %}
+    \begin{ResumeSubsection}{org={{ group.group }}}
         \begin{itemize}
-            {% for skill in skills %}
+        {% for skill in group.items %}
             \item {{ skill }}
-            {% endfor %}
+        {% endfor %}
         \end{itemize}
     \end{ResumeSubsection}
+    {% endfor %}
 \end{ResumeSection}
+{% endif %}
 
+{% if experience %}
 \begin{ResumeSection}{experience}
     {% for exp in experience %}
-    \begin{ResumeSubsection}{org={{ exp.org }},location={{ exp.location }},position={{ exp.position }},duration={{ exp.duration }}}
+    \begin{ResumeSubsection}{org={{ exp.company }},position={{ exp.position }},duration={{ exp.period }}}
         \begin{itemize}
-            {% for line in exp.description %}
-            \item {{ line }}
-            {% endfor %}
+        {% for duty in exp.duties %}
+            \item {{ duty }}
+        {% endfor %}
         \end{itemize}
     \end{ResumeSubsection}
     {% endfor %}
 \end{ResumeSection}
+{% endif %}
 
+{% if education %}
 \begin{ResumeSection}{education}
     {% for edu in education %}
-    \begin{ResumeSubsection}{org={{ edu.org }},position={{ edu.degree }},duration={{ edu.duration }}}
+    \begin{ResumeSubsection}{org={{ edu.name }},position={{ edu.level }}{{ ', ' ~ edu.specialty if edu.specialty and edu.specialty != '-' else '' }},duration={{ edu.start }}--{{ edu.end }}}
         \begin{itemize}
-            \item {{ edu.note }}
+            {% if edu.specialty and edu.specialty != '-' %}\item Специальность: {{ edu.specialty }}{% endif %}
         \end{itemize}
     \end{ResumeSubsection}
     {% endfor %}
 \end{ResumeSection}
+{% endif %}
 
 \end{document}
