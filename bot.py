@@ -9,7 +9,7 @@ from db import init_db, add_user, add_resume
 
 load_dotenv()
 
-bot = Bot(token=os.getenv("TELEGRAM_TOKEN"))
+bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher(bot)
 
 init_db()
