@@ -10,7 +10,7 @@ from pdf2image import convert_from_path
 from dotenv import load_dotenv
 
 from s3_utils import upload_file, generate_download_link
-from latexcvbot.db import init_db, add_user, add_resume
+from db import init_db, add_user, add_resume
 
 load_dotenv()
 TOKEN = os.getenv("BOT_TOKEN")
