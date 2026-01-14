@@ -1,0 +1,232 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 # Product Overview \'97 AI-Powered Resume Platform\
+\
+---\
+\
+## 1. Product Description\
+\
+The product is a **web-based AI-powered resume creation and management platform** designed for individuals applying for jobs in international markets.  \
+It allows users to **create, edit, translate, version, and export professional resumes** in multiple formats, with a strong focus on long-term accessibility, legal ownership, and scalability.\
+\
+The platform is **web-first**, with future expansion planned for mobile applications.  \
+All user data is securely stored, enabling users to return at any time and re-download or regenerate their resumes.\
+\
+---\
+\
+## 2. Core Value Proposition\
+\
+- Create professional resumes in minutes\
+- Maintain full version history and language variants\
+- Translate resumes using AI while preserving structure and meaning\
+- Export resumes in high-quality PDF and advanced LaTeX formats\
+- Access resumes anytime, from anywhere\
+- Built for international job markets (US, Canada, EU)\
+\
+---\
+\
+## 3. Target Users\
+\
+- Job seekers applying internationally\
+- Immigrants preparing resumes for Canada / EU / US\
+- Freelancers and remote workers\
+- Students and early-career professionals\
+- Power users requiring LaTeX or academic CV formats\
+\
+---\
+\
+## 4. Core Functionality\
+\
+### 4.1 User Accounts & Access\
+- Secure user authentication (Email / OAuth)\
+- Personal dashboard with resume history\
+- Persistent access to all created resumes\
+\
+---\
+\
+### 4.2 Resume Creation & Editing\
+- Structured resume editor based on JSON schema\
+- Editable sections:\
+  - Personal information\
+  - Work experience\
+  - Education\
+  - Skills\
+  - Languages\
+- Automatic versioning on every save\
+- Support for multiple resumes per user\
+\
+---\
+\
+### 4.3 Resume Versioning\
+- Each edit creates a new resume version\
+- Ability to restore or re-export previous versions\
+- Clear timeline of changes\
+\
+---\
+\
+### 4.4 Multilingual Resumes\
+- Separate resumes per language\
+- Supported languages (MVP):\
+  - English\
+  - Russian\
+  - French\
+- AI-generated translations stored as independent resumes\
+\
+---\
+\
+### 4.5 AI-Powered Translation\
+- Resume translation using Anthropic API\
+- Structured JSON-to-JSON translation\
+- Translation modes:\
+  - Standard translation\
+  - Professional CV translation (HR-optimized)\
+- Translation usage tracking per user\
+\
+---\
+\
+### 4.6 Resume Preview\
+- Live preview synchronized with editor\
+- Multiple professionally designed HTML/CSS templates\
+- Responsive design for desktop and tablet\
+\
+---\
+\
+### 4.7 Export & Downloads\
+- Primary export format: PDF\
+- Optional export formats:\
+  - PNG\
+  - LaTeX (advanced users)\
+- Server-side rendering for consistent formatting\
+- Files stored securely and regenerated on demand\
+\
+---\
+\
+## 5. Data Storage & Persistence\
+\
+### 5.1 Source of Truth\
+- Resumes stored as structured JSON in PostgreSQL\
+- PDF, PNG, and LaTeX treated as derived assets\
+\
+### 5.2 Version Storage\
+- All resume versions stored permanently\
+- Language variants stored independently\
+\
+### 5.3 File Storage\
+- Secure object storage using Amazon S3\
+- Private buckets with time-limited signed URLs\
+\
+---\
+\
+## 6. Monetization Architecture (Prepared, Hidden)\
+\
+### 6.1 Subscription Model\
+- Free plan (default)\
+- Pro plan (future activation)\
+\
+### 6.2 Monetizable Features\
+- AI translations\
+- Ad-free experience\
+- Premium resume templates\
+- Unlimited exports and resumes\
+\
+### 6.3 Payment Processing\
+- Stripe integration (backend only)\
+- Subscription lifecycle handled via webhooks\
+- Monetization UI hidden behind feature flags\
+\
+---\
+\
+## 7. Advertising Strategy (Non-Intrusive)\
+\
+- Banner-only advertising (no popups or interstitials)\
+- Sidebar and footer placements\
+- Ads fully disabled by default\
+- Ads removed automatically for premium users\
+\
+---\
+\
+## 8. Technology Stack\
+\
+### 8.1 Frontend\
+- Next.js (React)\
+- Tailwind CSS\
+- Server-side rendering for SEO\
+- Feature-flag-controlled UI\
+\
+### 8.2 Backend\
+- FastAPI (Python)\
+- REST API architecture\
+- Background tasks for exports and AI requests\
+\
+### 8.3 Database\
+- PostgreSQL\
+- JSONB storage for resume content\
+- Versioned relational data model\
+\
+### 8.4 AI Services\
+- Anthropic API for resume translation\
+\
+### 8.5 Payments\
+- Stripe (subscriptions and payments)\
+\
+### 8.6 Advertising\
+- Google Ads (prepared, disabled by default)\
+\
+### 8.7 File Storage\
+- Amazon S3\
+- Signed URL access control\
+\
+---\
+\
+## 9. Hosting & Deployment\
+\
+- Backend hosting: Render\
+- Frontend hosting: Vercel\
+- CI/CD pipelines for automated deployment\
+- Environment-based configuration (dev / staging / prod)\
+\
+---\
+\
+## 10. Security & Compliance\
+\
+- Secure authentication and authorization\
+- Access control by user ownership\
+- Encrypted secrets and environment variables\
+- Private file storage with expiring access links\
+- GDPR-ready data handling\
+\
+---\
+\
+## 11. Legal & Ownership\
+\
+- Platform owned by an international company\
+- All intellectual property assigned to the company\
+- Source code, domain, and assets legally protected\
+- Terms of Service and Privacy Policy in place\
+\
+---\
+\
+## 12. Scalability & Future Expansion\
+\
+- Mobile applications (React Native)\
+- Additional languages\
+- AI-powered resume improvement and rewriting\
+- ATS compatibility analysis\
+- Cover letter generation\
+- Team and recruiter features\
+\
+---\
+\
+## 13. Product Vision\
+\
+The platform aims to become a **trusted career document hub**, where users can manage all professional resumes across languages, markets, and years \'97 with full ownership, legal clarity, and AI-assisted quality.\
+\
+---\
+}

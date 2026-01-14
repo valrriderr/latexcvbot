@@ -1,0 +1,221 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 # MVP Resume Platform \'97 Full Development Plan\
+\
+---\
+\
+## Phase 0 \'97 Strategy & Product Definition\
+\
+### 0.1 Product Scope\
+- Web-first resume builder platform\
+- Core data model: Resume JSON\
+- Live editor with real-time preview\
+- Export formats: PDF (primary), PNG (optional), LaTeX (advanced/secondary)\
+- AI-powered resume translation\
+- Ads and monetization prepared but hidden in UI\
+\
+### 0.2 Business & Legal Strategy\
+- Platform owned by an international company\
+- Stripe-based monetization planned but disabled\
+- Intellectual Property owned by the company from day one\
+\
+---\
+\
+## Phase 1 \'97 Infrastructure & Project Setup\
+\
+### 1.1 Repositories & Access\
+- Create GitHub Organization\
+- Set up repositories:\
+  - `frontend`\
+  - `backend`\
+- Configure access control and branch rules\
+\
+### 1.2 Hosting & Deployment\
+- Backend: Render (FastAPI service)\
+- Frontend: Vercel (Next.js)\
+- Database: PostgreSQL\
+- File storage: Amazon S3\
+- Configure CI/CD pipelines\
+\
+### 1.3 Backend Skeleton\
+- Initialize FastAPI project\
+- Environment configuration\
+- Health check endpoint\
+- Base middleware (auth, logging, error handling)\
+\
+### 1.4 Database Schema (Initial)\
+- users\
+- resumes\
+- resume_versions\
+- resume_exports\
+- plans\
+- subscriptions\
+- usage_limits\
+- feature_flags\
+\
+---\
+\
+## Phase 2 \'97 Authentication & Users\
+\
+### 2.1 Authentication\
+- Email + password authentication\
+- Optional Google OAuth\
+- Secure session/token handling\
+\
+### 2.2 Default Subscription\
+- Automatically assign Free plan on signup\
+- Create subscription record for every user\
+- Initialize usage limits\
+\
+---\
+\
+## Phase 3 \'97 Resume Core Logic\
+\
+### 3.1 Resume Data Model\
+- Define Resume JSON schema (v1)\
+- Store content as JSONB in database\
+- Track schema versioning\
+\
+### 3.2 Resume CRUD\
+- Create resume\
+- Update resume (with versioning)\
+- List user resumes\
+- Delete resume\
+\
+### 3.3 Versioning\
+- Create a new resume_version on each save\
+- Store metadata (source: manual / AI, timestamp)\
+\
+### 3.4 Language Variants\
+- One resume per language (EN / RU / FR)\
+- Translations create new resume entities\
+\
+---\
+\
+## Phase 4 \'97 Frontend Editor & UI\
+\
+### 4.1 Layout Structure\
+- Left panel: editor forms\
+- Right panel: live preview\
+- Sidebar reserved for ads (hidden by flag)\
+\
+### 4.2 Resume Editor Forms\
+- Personal information\
+- Work experience\
+- Education\
+- Skills\
+- Languages\
+\
+### 4.3 Live Preview\
+- Real-time rendering from Resume JSON\
+- 2 HTML/CSS resume templates\
+- Responsive layout\
+\
+---\
+\
+## Phase 5 \'97 Export System\
+\
+### 5.1 PDF Export\
+- Server-side HTML rendering\
+- HTML \uc0\u8594  PDF generation\
+- Store generated files in S3\
+- Signed URL delivery\
+\
+### 5.2 Export Caching\
+- Reuse existing exports when available\
+- Regenerate on content/template change\
+\
+### 5.3 LaTeX Export (Secondary)\
+- Optional LaTeX template rendering\
+- Advanced / power-user feature\
+- No primary UI emphasis\
+\
+---\
+\
+## Phase 6 \'97 AI Translation\
+\
+### 6.1 AI Integration\
+- Integrate Anthropic API\
+- Send structured Resume JSON\
+- Receive translated Resume JSON\
+\
+### 6.2 Translation Modes\
+- Standard translation\
+- Professional CV translation\
+\
+### 6.3 Usage Tracking\
+- Track translation usage per user\
+- Store usage data for future paywalls\
+\
+---\
+\
+## Phase 7 \'97 Monetization (Backend Only)\
+\
+### 7.1 Plans & Limits\
+- Define Free and Pro plans\
+- Configure feature availability per plan\
+- Enforce limits at API level (soft enforcement initially)\
+\
+### 7.2 Stripe Integration (Hidden)\
+- Create Stripe account\
+- Implement webhook endpoints\
+- Handle subscription lifecycle events\
+- Do not expose checkout or pricing UI\
+\
+### 7.3 Feature Flags\
+- payments_enabled\
+- ads_enabled\
+- upgrade_ui_visible\
+- ai_paid_only\
+\
+---\
+\
+## Phase 8 \'97 Advertising (Prepared, Disabled)\
+\
+### 8.1 Ad Architecture\
+- Create reusable AdSlot component\
+- Lazy-load ad containers\
+- Controlled by feature flags\
+\
+### 8.2 Ad Platforms\
+- Prepare Google Ads integration\
+- No active ad rendering in MVP\
+\
+---\
+\
+## Phase 9 \'97 Legal & Compliance\
+\
+### 9.1 Legal Documents\
+- Terms of Service\
+- Privacy Policy\
+- Cookie Policy\
+\
+### 9.2 Intellectual Property\
+- IP assignment to company\
+- Domain and service accounts owned by company\
+\
+---\
+\
+## Phase 10 \'97 Testing & Soft Launch\
+\
+### 10.1 Functional Testing\
+- User registration and login\
+- Resume creation and editing\
+- Version history\
+- AI translation\
+- PDF export and re-download\
+\
+### 10.2 Deployment\
+- Production deployment\
+- Error monitoring and logging\
+- Internal soft launch (no marketing)\
+\
+---\
+}
